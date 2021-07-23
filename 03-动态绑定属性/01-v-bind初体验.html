@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="imageURL" alt="测试">
+    <br>
+    <a v-bind:href="hrefUrl">aaaa</a>
+    <!--    语法糖-->
+    <a :href="hrefUrl">aaaa</a>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            imageURL: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130129%2F11507979_020415120167_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629551675&t=057986f9d434e2a0a1e54b08a081a362",
+            hrefUrl: "http://www.baidu.com",
+        }
+    })
+</script>
+</body>
+</html>

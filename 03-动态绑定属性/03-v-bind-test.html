@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(m,i) in movies" @click="onClick" :id="i" :data-index="i">{{i}}-{{m}}</li>
+    </ul>
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"]
+            listStyle:{
+                
+            }
+        },
+        methods: {
+            onClick:function () {
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

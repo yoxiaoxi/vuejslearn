@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*        #app {
+            background-color: coral;
+        }*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--v-cloak 延迟-->
+<div id="app" v-cloak>
+    <!-- 显示html-->
+    <h2 v-html="msg" style="text-align: center;vertical-align: center"></h2>
+    <!-- 显示文字-->
+    <h2 v-text="msg"></h2>
+    <!--显示大括号-->
+    <h2 v-pre>{{msg}}</h2>
+    <h2>{{msg}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    setTimeout(function () {
+        const app = new Vue({
+            el: "#app",
+            data: {
+                msg: '<a href="http://www.baidu.com">百度一下</a>'
+            }
+        })
+    }, 1000)
+
+</script>
+</body>
+</html>
