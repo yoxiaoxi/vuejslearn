@@ -11,6 +11,7 @@
 </head>
 <body>
 <div id="app">
+    <!--  还可以添加数组  -->
     <h2 :class="{active:isActive,line:isLine}">msg</h2>
     <button @click="activeSwitch">开关</button>
 </div>
@@ -26,7 +27,7 @@
         },
         methods: {
             activeSwitch: function () {
-                this.isActive=!this.isActive
+                this.isActive = !this.isActive
 
             }
         }

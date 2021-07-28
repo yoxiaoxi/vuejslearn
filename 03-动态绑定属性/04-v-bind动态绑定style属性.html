@@ -7,18 +7,23 @@
 </head>
 <body>
 <div id="app">
+    <!--    对象-->
     <h2 :style="{color: sColor }">{{msg}}</h2>
     <h2>{{msg}}</h2>
+    <!--    数组-->
+    <h2 :style="[styleArray]">{{msg}}</h2>
+
 </div>
 
 <script src="../js/vue.js"></script>
 <script>
 
-    const app=new Vue({
+    const app = new Vue({
         el: '#app',
-        data:{
+        data: {
             msg: '你好',
             sColor: 'cornflowerblue',
+            styleArray: {color: 'red',backgroundColor:'blue'}
         },
     })
 
