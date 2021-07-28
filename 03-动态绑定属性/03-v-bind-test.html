@@ -8,6 +8,7 @@
 <div id="app">
     <ul>
         <li v-for="(m,i) in movies" @click="onClick" :id="i" :data-index="i">{{i}}-{{m}}</li>
+        <li v-for="(m,i) in movies" @click="onClick" :style="">{{i}}-{{m}}</li>
     </ul>
 </div>
 
@@ -17,7 +18,7 @@
     const app = new Vue({
         el: '#app',
         data: {
-            movies: ["d1", "d2", "d3", "d4"]
+            movies: ["d1", "d2", "d3", "d4"],
             listStyle:{
                 
             }
