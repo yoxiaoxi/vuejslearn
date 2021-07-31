@@ -10,13 +10,12 @@
     <h2>{{countPricejs61}}</h2>
     <h2>{{countPricejs62}}</h2>
 
-    <h2>添加图书</h2>
-    <p>书id：</p><label>
-    <input name="bookId">
-</label>
-    <p>书名：</p><input name="bookName">
-    <p>书价格：</p><input name="bookPrice">
-    <button @click="addBook">添加</button>
+<!--    <h2>添加图书</h2>-->
+<!--    <p>书id：</p>-->
+<!--    <input type="number" v-model="bookid">-->
+<!--    <p>书名：</p><input type="text" v-model="bookname">-->
+<!--    <p>书价格：</p><input type="number" v-model="bookprice">-->
+<!--    <button @click="addBook">添加</button>-->
 </div>
 
 <script src="../js/vue.js"></script>
@@ -31,33 +30,34 @@
                 {id: 113, name: 'iphone', price: 119.9},
             ]
         },
-        methods:{
-          addBook: function () {
-              this.books.push({id:114,name:'android',price: 9.0})
-          }
-        },
+        // methods: {
+        //     addBook: function () {
+        //         let book={id:this.bookid,name:this.bookname,price:this.bookprice}
+        //         this.books.push(book)
+        //     }
+        // },
         computed: {
-            countPrice:function () {
-                let count=0
-                for (let i=0;i<this.books.length;i++){
-                    console.log(i+this.books[i].toString())
-                    count+=this.books[i].price
+            countPrice: function () {
+                let count = 0
+                for (let i = 0; i < this.books.length; i++) {
+                    console.log(i + this.books[i].toString())
+                    count += this.books[i].price
                 }
                 return count
             },
             //js6语法
-            countPricejs61:function () {
-                let count=0
-                for (let i in this.books){
-                    count+=this.books[i].price
+            countPricejs61: function () {
+                let count = 0
+                for (let i in this.books) {
+                    count += this.books[i].price
                 }
                 return count
             },
             //js6语法
-            countPricejs62:function () {
-                let count=0
-                for (let book of this.books){
-                    count+=book.price
+            countPricejs62: function () {
+                let count = 0
+                for (let book of this.books) {
+                    count += book.price
                 }
                 return count
             }
