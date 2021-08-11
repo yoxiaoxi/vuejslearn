@@ -9,6 +9,8 @@
     <img v-bind:src="imageURL" alt="测试">
     <br>
     <a v-bind:href="hrefUrl">aaaa</a>
+    <!--    这个引用不到-->
+    <a href="{{hrefUrl}}">aaaa</a>
     <!--    语法糖-->
     <a :href="hrefUrl">aaaa</a>
 </div>
