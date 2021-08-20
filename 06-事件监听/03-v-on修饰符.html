@@ -6,13 +6,41 @@
 </head>
 <body>
 <div id="app">
+    <h2>事件冒泡</h2>
+    <div class="outer" @click="outerClick">
+        <div class="inner" @click="innerClick">
+            <button @click.stop="btnClick">事件冒泡</button>
+            <p>.stop可以实现当我点击按钮的时候，只触发按钮点击事件，阻止了事件冒泡</p>
+        </div>
+    </div>
+    <div class="outer" @click="outerClick">
+        <div class="inner" @click.self="innerClick">
+            <button @click="btnClick">事件冒泡</button>
+        </div>
+        <p>.self只能阻止自己身上冒泡行为，并不会真正的阻止冒泡行为</p>
+        <p>只给inner div 加.self，当点击按钮时，会从里到外依次触发按钮点击事件、outer点击事件</p>
+        <p>而不会触发inner点击事件，跳过了inner div冒泡</p>
+        <p>当点击inner div时，依然会从里到外依次触发inner点击事件、outer点击事件</p>
+    </div>
 
+    
 </div>
 <script src="../js/vue.js"></script>
 <script>
     const app = new Vue({
         el: '#app',
 
+        methods:{
+            outerClick(){
+                console.log('outerClick');
+            },
+            innerClick(){
+                console.log('innerClick');
+            },
+            btnClick(){
+                console.log('btnClick');
+            }
+        }
     })
 </script>
 
