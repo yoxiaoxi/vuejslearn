@@ -8,10 +8,13 @@
 <div id="app">
     <span v-if="isUser">
         <label for="username">用户账号</label>
+        <!--        <input type="text" id="username" placeholder="用户账号" key="username">-->
         <input type="text" id="username" placeholder="用户账号">
     </span>
     <span v-else>
         <label for="mail">用户邮箱</label>
+        <!--        vue存在dom服用问题可以使用key来解决，保证key不用就可以
+                <input type="text" id="mail" placeholder="用户邮箱" key="mail">-->
         <input type="text" id="mail" placeholder="用户邮箱">
     </span>
     <br>
@@ -22,14 +25,14 @@
 
 </script>
 <script>
-    const app=new Vue({
-        el:'#app',
-        data:{
-            isUser:true
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isUser: true
         },
-        methods:{
-            change(){
-                this.isUser=!this.isUser
+        methods: {
+            change() {
+                this.isUser = !this.isUser
             }
         }
     })
