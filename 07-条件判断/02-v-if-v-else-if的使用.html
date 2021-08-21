@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2 v-if="isShow>10 &&isShow<20 ">{{isShow}}>10</h2>
+    <h2 v-else-if="isShow>20 && isShow<=40">40>={{isShow}}>30</h2>
+    <h2 v-else="isShow">{{isShow}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            msg: '哈哈',
+            isShow: 19
+        }
+    })
+</script>
+</body>
+</html>
