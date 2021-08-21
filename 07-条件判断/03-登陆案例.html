@@ -7,12 +7,12 @@
 <body>
 <div id="app">
     <span v-if="isUser">
-        <label for="username">用户名</label>
-        <input type="text" id="username">
+        <label for="username">用户账号</label>
+        <input type="text" id="username" placeholder="用户账号">
     </span>
     <span v-else>
         <label for="mail">用户邮箱</label>
-        <input type="text" id="mail">
+        <input type="text" id="mail" placeholder="用户邮箱">
     </span>
     <br>
     <button @click="change">更换</button>
