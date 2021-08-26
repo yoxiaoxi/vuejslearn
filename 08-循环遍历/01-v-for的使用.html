@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-    <h2 v-for="item in msg">{{item}}</h2>
+    <h2 v-for="item in msg" :key="item">{{item}}</h2>
 </div>
 <script src="../js/vue.js"></script>
 <script>
