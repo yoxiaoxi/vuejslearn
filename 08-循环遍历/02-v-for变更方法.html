@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+    </ul>
+    <button @click="list_pop">pop</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            list:['a','b','c']
+        },
+        methods:{
+            list_pop(){
+                this.list.pop()
+            },
+            list_
+        }
+    })
+</script>
+</body>
+</html>
