@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let nums = [11, 22, 33, 12, 123, 124, 100, 99]
+    // filter函数有一个要求必须返回boolean值
+    let newNums = nums.filter(
+        function (n) {
+            return n < 100
+        }
+    )
+    console.log(newNums);
+    // 2.map函数使用
+    let newNums2 = newNums.map(function (n) {
+        return n * 2
+    })
+    console.log(newNums2);
+    //3.reduce
+    //作用对数组中的内容进行汇总
+    let newNums3 = newNums2.reduce(function (preValue, n) {
+        return preValue += n
+    }, 0)
+    console.log(newNums3);
+
+    //通过一行代码写出来
+    let totalNum = nums.filter(function (n) {
+        return n < 100
+    }).map(function (n) {
+        return n * 2
+    }).reduce(function (preValue, n) {
+        return preValue + n
+    }, 0)
+    console.log('totalNum:' + totalNum);
+</script>
+</body>
+</html>
