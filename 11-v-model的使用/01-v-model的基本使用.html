@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <label>
+        <input type="text" :value="msg">
+    </label>
+    <label>
+        <input type="text" :placeholder="msg">
+    </label>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+            msg:'aaaa'
+        },
+        methods:{
+
+        }
+    })
+</script>
+
+</body>
+</html>

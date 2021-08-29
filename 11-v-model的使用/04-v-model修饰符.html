@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    lazy-->
+    <label>
+        <input type="text" v-model.lazy="msg" :value="msg">
+    </label>
+    <h2>{{msg}}</h2>
+
+    <!--    number-->
+    <!--    input默认是string类型-->
+    <label>
+        <input type="number" v-model.number="age">
+    </label>
+    <h2>{{age}}-{{typeof age}}</h2>
+
+    <!--    trim-->
+    <label>
+        <input type="text" v-model.trim="msg2" :value="msg2">
+    </label>
+    <h2>{{msg2}}-</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'aaa',
+            age: 18,
+            msg2:'asd '
+        }
+    })
+</script>
+
+</body>
+</html>
