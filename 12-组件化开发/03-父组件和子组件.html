@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <mycpn2></mycpn2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const mycpn1 = Vue.extend({
+        template: `
+        <div>
+            <h2>标题</h2>
+            <p>aaa</p>
+            <p>bbbaasd</p>
+        </div>
+        `
+    })
+    // 父
+    const mycpn2 = Vue.extend({
+        template: `
+        <div>
+            <h2>标题2</h2>
+            <p>aaa2</p>
+            <p>bbbaasd2</p>
+        <mycpn1></mycpn1>
+        </div>
+        `,
+        components:{
+            mycpn1:mycpn1
+        }
+
+    })
+
+    const app = new Vue({
+        el: '#app',
+        components: {
+            mycpn2: mycpn2
+        }
+    })
+</script>
+</body>
+</html>
