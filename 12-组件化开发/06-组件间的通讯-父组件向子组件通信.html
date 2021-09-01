@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn :cmovies="movies"></cpn>
+</div>
+
+<template id="cpn">
+    <div>
+        <ul>
+            <li v-for="item in cmovies">{{item}}</li>
+        </ul>
+    </div>
+</template>
+
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ['dianying1', 'dy2', 'dy3', 'dy4']
+        },
+        components: {
+            cpn: {
+                template: cpn,
+                // 第一种方式，缺点没有类型校验
+                // props:['cmovies']
+                //第二种，一般使用第二种
+                props:{
+                    cmovies: Array,
+                }
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
