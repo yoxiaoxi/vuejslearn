@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <cpn07 @classclick="pclick" :cmovies="movies"></cpn07>
+</div>
+
+<template id="cpn07">
+    <div>
+        <button v-for="item in cmovies" @click="btnClick(item)">{{item}}</button>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const mycpn07 = {
+        template: cpn07,
+        props:{
+            cmovies:{
+                type:Array,
+                required: true
+            }
+        },
+        methods: {
+            btnClick(item) {
+                // 父组组件中@对应的函数名
+                this.$emit('classclick',item)
+            }
+        }
+
+    }
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"],
+        },
+        methods: {
+            pclick(item) {
+                console.log(item);
+                alert(item)
+            }
+        },
+        components:{
+            cpn07: mycpn07
+        }
+    })
+</script>
+
+</body>
+</html>
