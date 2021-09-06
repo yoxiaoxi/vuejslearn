@@ -11,18 +11,29 @@
         <input type="text" :value="msg">
     </label>
     <label>
+        <!--v-model相当于这样-->
+        <input type="text" :value="msg" @input="wMsg">
+        <input type="text" :value="msg" @input="wMsg($event)">
+        <input type="text" :value="msg" @input="msg=$event.target.value">
+    </label>
+    <label>
+        <!--        placeholder提示-->
         <input type="text" :placeholder="msg">
     </label>
 </div>
 
 <script src="../js/vue.js"></script>
 <script>
-    const app=new Vue({
-        el:'#app',
-        data:{
-            msg:'aaaa'
+    const app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'aaaa'
         },
-        methods:{
+        methods: {
+            wMsg(event) {
+                console.log(event);
+                this.msg = event.target.value
+            }
 
         }
     })
