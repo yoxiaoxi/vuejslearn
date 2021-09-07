@@ -7,37 +7,42 @@
 <body>
 
 <div id="app">
-    <base-checkbox v-model="lovingVue"></base-checkbox>
+    <Stepper v-model="goodsCount"></Stepper>
+    {{goodsCount}}
 </div>
-
 
 <script src="../js/vue.js"></script>
 <script>
-    Vue.component('base-checkbox', {
-        model: {
-            prop: 'checked',
-            event: 'change'
-        },
-        props: {
-            checked: Boolean
-        },
+    Vue.component('Stepper', {
+        props: ['count'],
         template: `
-    <input
-      type="checkbox"
-      v-bind:checked="checked"
-      v-on:change="$emit('change', $event.target.checked)"
-    >
-  `
-    })
-
-    const app = new Vue({
-        el: '#app',
-        data: {
-            movies: ["d1", "d2", "d3", "d4"],
+            <div>
+                <button @click="sub">-</button>
+                <span>{{count}}</span>
+                <button @click="add">+</button>
+            </div>
+        `,
+        model: {
+            //event:什么时候触发v-model行为
+            event: 'change-count',
+            // 定义传递给v-model的那个变量，绑定到哪个属性值上
+            prop: 'count'
         },
         methods: {
-            onClick:function () {
+            sub() {
+                // 触发上面model中定义的触发名称
+                // 这里不需要修改this.count的值，只要把最终的结果传递出去就行
+                this.$emit("change-count", this.count - 1)
+            },
+            add() {
+                this.$emit("change-count", this.count + 1)
             }
+        }
+    })
+    const app=new Vue({
+        el: "#app",
+        data: {
+            goodsCount: 33
         }
     })
 </script>
