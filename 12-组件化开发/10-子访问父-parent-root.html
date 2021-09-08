@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <cpn10></cpn10>
+</div>
+
+<template id="mycpn10">
+    <div>
+        <h2>{{cmsg}}</h2>
+        <button @click="parent">parent</button>
+        <button @click="root">root</button>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"],
+        },
+        methods: {
+            onClick: function () {
+            }
+        },
+        components: {
+            cpn10: {
+                template: mycpn10,
+                props: {
+                    cmsg: {
+                        type: String,
+                        default: '你好，这是默认值',
+                    }
+                },
+                methods: {
+                    parent(){
+                        console.log('parent');
+                        console.log(this.$parent);
+                    },
+                    root(){
+                        console.log('root');
+                        console.log(this.$root);
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>
