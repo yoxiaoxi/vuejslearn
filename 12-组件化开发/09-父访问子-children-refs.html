@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn :cmsg="msg"></cpn>
+    <cpn :cmsg="msg2" ref="msg3"></cpn>
+    <cpn :cmsg="msg3" ref="msg3"></cpn>
+    <button @click="btnchildren">children点击</button>
+    <br>
+    <button @click="btnrefs">refs点击</button>
+</div>
+
+<template id="mycpn09">
+    <div>
+        <h2>{{cmsg}}</h2>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            msg: '你好',
+            msg2: '你好2',
+            msg3: '你好3'
+        },
+        methods:{
+            btnchildren(){
+                console.log(this.$children);
+                console.log(this.$children[2].cmsg);
+            },
+            btnrefs(){
+                console.log(this.$refs);
+                console.log(this.$refs.msg3.cmsg);
+            }
+        },
+        components: {
+            cpn: {
+                template: mycpn09,
+                props: {
+                    cmsg: {
+                        type: String,
+                        required: true
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
