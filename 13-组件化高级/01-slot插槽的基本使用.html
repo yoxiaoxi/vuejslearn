@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <cpnslot01><button>阿牛</button></cpnslot01>
+    <cpnslot01><a href="aaa" >aaa</a></cpnslot01>
+    <cpnslot01></cpnslot01>
+</div>
+
+<template id="slot01">
+    <div>
+        <h2>
+            hahaha
+        </h2>
+<!--        如果是空则不显示-->
+<!--        <slot></slot>-->
+        <slot>
+            <h2 style="color: red">aaaa</h2>
+        </slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"],
+        },
+        methods: {
+            onClick: function () {
+            }
+        },
+        components: {
+            cpnslot01: {
+                template: slot01
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>
