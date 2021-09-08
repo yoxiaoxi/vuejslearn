@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <slotcpn02><span slot="center">center</span></slotcpn02>
+    <slotcpn02><button slot="left">left</button></slotcpn02>
+</div>
+
+<template id="slot02">
+    <div>
+        <slot name="left">左边</slot>
+        <slot name="center">中间</slot>
+        <slot name="right">右边</slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"],
+        },
+        components: {
+            slotcpn02: {
+                template: slot02
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
