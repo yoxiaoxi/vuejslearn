@@ -8,7 +8,7 @@
 
 <div id="app">
     <slotcpn02><span slot="center">center</span></slotcpn02>
-    <slotcpn02><button slot="left">left</button></slotcpn02>
+    <slotcpn02><button slot="left" @click="btnslot02">left</button></slotcpn02>
 </div>
 
 <template id="slot02">
@@ -28,6 +28,11 @@
         components: {
             slotcpn02: {
                 template: slot02
+            }
+        },
+        methods:{
+            btnslot02(){
+                alert('aaaaaa')
             }
         }
     })
