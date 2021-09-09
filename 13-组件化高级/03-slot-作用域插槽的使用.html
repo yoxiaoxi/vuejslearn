@@ -6,5 +6,69 @@
 </head>
 <body>
 
+<div id="app">
+    <cpnslot03></cpnslot03>
+    <cpnslot03>
+        <template slot-scope="slot">
+            <span v-for="i in slot.data1">{{i}} - </span>
+            <br>
+<!--            <span v-for="i in slot.data2">{{i}} + </span>-->
+        </template>
+    </cpnslot03>
+    <cpnslot03>
+        <div slot-scope="slotaaaa">
+            <span >{{slotaaaa.data1}}</span>
+<!--            <span>{{slotaaaa.data2}}</span>-->
+        </div>
+    </cpnslot03>
+    <cpnslot03>
+        <template slot-scope="slot">
+            <span>{{slot.data1.join('-')}}</span>
+            <span>{{slot.data2.join('+')}}</span>
+<!--            <span>{{slot.data2}}</span>-->
+        </template>
+    </cpnslot03>
+</div>
+
+<template id="slot03">
+    <div>
+        <slot :data1="pLanguage" :data2="pMovies">
+            <ul>
+                <li v-for="item in pLanguage">{{item}}</li>
+            </ul>
+        </slot>
+        <slot :data2="pMovies">
+            <ul>
+                <li v-for="item in pMovies">{{item}}</li>
+            </ul>
+        </slot>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies: ["d1", "d2", "d3", "d4"],
+        },
+        methods: {
+            onClick: function () {
+            }
+        },
+        components: {
+            cpnslot03: {
+                template: slot03,
+                data() {
+                    return {
+                        pLanguage: ['Java', 'Go', 'PHP', 'Python'],
+                        pMovies: ['mv1', 'mv2', 'mv3', 'mv4']
+                    }
+                }
+            }
+        }
+    })
+</script>
+
 </body>
 </html>
