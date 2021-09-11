@@ -1,12 +1,13 @@
 const path = require('path');
-const webpack=require('webpack')
+const webpack=require('webpack');
+const HtmlWebpackPlugin=require('html-webpack-plugin');
 
 module.exports={
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: 'dist/'
+        // publicPath: 'dist/'
     },
     module: {
         rules: [
@@ -63,7 +64,10 @@ module.exports={
         }
     },
     plugins:[
-        new webpack.BannerPlugin('版权归ycy所有')
+        new webpack.BannerPlugin('版权归ycy所有'),
+        new HtmlWebpackPlugin({
+            template:'index.html'
+        })
     ]
 
 
