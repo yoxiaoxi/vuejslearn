@@ -37,7 +37,22 @@ module.exports={
                         }
                     }
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015']
+                    }
+                }
             }
         ]
+    },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+        }
     }
 }

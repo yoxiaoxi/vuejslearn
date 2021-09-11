@@ -1,1 +1,2 @@
-export const name='aaa';
+// es6
+export const name = 'aaa';
