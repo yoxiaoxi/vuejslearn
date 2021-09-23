@@ -1,8 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
+      <!--      默认是a标签，tag可以修改标签-->
+      <router-link to="/about" tag="button">About</router-link>
+      <!--      replace 不可以在浏览器中使用返回   -->
+      <router-link to="/about" tag="button" replace>About</router-link>
+      <router-link to="/user/111" tag="button" replace>User</router-link>
     </div>
     <router-view/>
   </div>

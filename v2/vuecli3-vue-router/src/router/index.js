@@ -7,6 +7,11 @@ Vue.use(VueRouter)
 
 // 创建路有对象
 const routes = [
+  // {
+  //   path: '',
+  //   redirect: '/about'
+  // },
+
   {
     path: '/',
     name: 'Home',
@@ -19,6 +24,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/user/:id',
+    name:'User',
+    component: ()=>import('../views/User')
   }
 ]
 
