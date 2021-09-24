@@ -8,12 +8,22 @@
       <router-link to="/about" tag="button">About</router-link>
       <!--      replace 不可以在浏览器中使用返回   -->
       <router-link to="/about" tag="button" replace>About</router-link>
-      <router-link to="/user/111" tag="button" replace>User</router-link>
+      <router-link :to="'/user/'+userid" tag="button" replace>User</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+<script>
 
+export default {
+  name: 'App',
+  data(){
+    return{
+      userid:111,
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

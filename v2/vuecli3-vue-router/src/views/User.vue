@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>我是User</h2>
-    <p>{{$router.params.id}}</p>
+    <p>aaa</p>
+    <p>{{$route.params.id}}</p>
   </div>
 </template>
