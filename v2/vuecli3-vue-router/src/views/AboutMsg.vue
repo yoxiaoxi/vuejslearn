@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <ul>
+      <li>msg1</li>
+      <li>msg2</li>
+      <li>msg3</li>
+      <li>msg4</li>
+    </ul>
+  </div>
+</template>
