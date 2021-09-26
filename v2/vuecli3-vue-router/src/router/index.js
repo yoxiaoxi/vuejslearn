@@ -41,6 +41,11 @@ const routes = [
         path: '/user/:id',
         name: 'User',
         component: () => import('../views/User')
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: ()=>import('../views/Profile')
     }
 ]
 
