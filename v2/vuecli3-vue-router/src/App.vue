@@ -9,7 +9,7 @@
       <!--      replace 不可以在浏览器中使用返回   -->
       <router-link to="/about" tag="button" replace>About</router-link>
       <router-link :to="'/user/'+userid" tag="button" replace>User</router-link>
-      <router-link :to="{path:'/profile',query:{'name':'yan',age:26} }" tag="button" replace>｜Profile</router-link>
+      <router-link :to="{path:'/profile',query:{'name':'yan',age:25} }" tag="button" replace>｜Profile</router-link>
     </div>
     <router-view/>
   </div>
